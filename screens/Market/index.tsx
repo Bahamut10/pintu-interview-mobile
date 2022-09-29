@@ -9,7 +9,6 @@ import colors from "../../themes/colors";
 import useMarket from "./useMarket";
 
 const Market = () => {
-  const { asset } = useMarketContext();
   const {
     data,
     getPrice,
@@ -17,7 +16,7 @@ const Market = () => {
     isLoading,
     isCoinDelisted,
     refresh,
-  } = useMarket(asset);
+  } = useMarket();
 
   const renderItemSeparator = useCallback(() => {
     return <View style={styles.divider} />
