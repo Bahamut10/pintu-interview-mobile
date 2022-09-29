@@ -2,7 +2,7 @@
 import { useCallback, useEffect } from "react";
 import { FlatList, ListRenderItem, RefreshControl, StyleSheet, Text, View } from "react-native";
 
-import CryptoItem from "../../components/CryptoItem/CryptoItem";
+import CryptoItem from "../../components/CryptoItem";
 import { useMarketContext } from "../../contexts/MarketContext";
 import { CryptoCoin } from "../../interfaces/crypto";
 import colors from "../../themes/colors";
@@ -29,6 +29,8 @@ const Market = () => {
     } return <></>
   };
 
+  const keyExtractor = (item: CryptoCoin) => item.name;
+
   if (isLoading) return <Text>Loading...</Text>
 
   return (
@@ -37,6 +39,7 @@ const Market = () => {
       style={styles.list}
       ItemSeparatorComponent={renderItemSeparator}
       renderItem={renderItem}
+      keyExtractor={keyExtractor}
       refreshControl={(
         <RefreshControl
           refreshing={refresh}

@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
-
 import { delisted } from "../../helpers/delisted";
 import { CryptoCoin } from "../../interfaces/crypto";
 import { CryptoPrice } from "../../interfaces/price";
 import Crypto from "../../network/Crypto";
 
-const useMarket = (asset: string) => {
+const useMarket = (asset?: string) => {
   const [data, setData] = useState<CryptoCoin[]>();
   const [refresh, setRefresh] = useState(false);
 

@@ -16,12 +16,6 @@ const CryptoItem = (props: Props) => {
   const { coin, price } = props;
   const { upDownStatus, formatCurrency } = useCryptoItem(price?.latestPrice);
 
-  const renderLatestPriceColor = () => {
-    switch(upDownStatus) {
-      case 'up': return styles.up
-    }
-  }
-
   return (
     <View style={styles.container}>
       <View style={styles.coinIdentity}>

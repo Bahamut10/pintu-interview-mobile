@@ -7,12 +7,17 @@ interface Props {
   children?: ReactNode;
 }
 
-const initialState = {
-  asset: '',
-  setAsset: (value: string) => {}
+interface ContextType {
+  asset: string;
+  setAsset: (value: string) => void
 }
 
-const MarketContext = createContext(initialState);
+const initialState = {
+  asset: '',
+  setAsset: () => {}
+}
+
+const MarketContext = createContext<ContextType>(initialState);
 
 const MarketContextProvider = (props: Props) => {
   const { children } = props;

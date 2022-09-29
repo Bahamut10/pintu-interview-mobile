@@ -10,14 +10,14 @@ const queryClient = new QueryClient();
 
 export default function App() {
   return (
-    <MarketContextProvider>
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <MarketContextProvider>
         <StatusBar style="auto" />
         <NavigationContainer>
           <MarketNavigator />
         </NavigationContainer>
-      </QueryClientProvider>
-    </MarketContextProvider>
+      </MarketContextProvider>
+    </QueryClientProvider>
   );
 }
 
