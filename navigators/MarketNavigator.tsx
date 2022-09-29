@@ -1,7 +1,9 @@
-import { createStackNavigator } from "@react-navigation/stack";
-import SearchBar from "../components/Searchbar";
-import SortButton from "../components/SortButton";
-import Market from "../screens/Market";
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import SearchBar from '../components/Searchbar';
+import SortButton from '../components/SortButton';
+import Market from '../screens/Market';
 
 const Stack = createStackNavigator();
 
@@ -17,15 +19,12 @@ const MarketNavigator = () => {
           headerRight: () => <SortButton />,
           headerStyle: {
             shadowOpacity: 0,
-          }
-          // headerStyle: {
-          //   paddingHorizontal: 20
-          // }
+          },
         }}
       />
     </Stack.Navigator>
   );
-}
+};
 
 const screenOptions = {
   // cardStyle: {

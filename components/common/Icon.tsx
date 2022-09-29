@@ -1,14 +1,6 @@
-import React, { SVGProps } from 'react';
+import React from 'react';
 import Svg, {
   Path,
-  Mask,
-  Circle,
-  Rect,
-  Ellipse,
-  G,
-  Defs,
-  ClipPath,
-  Line,
   SvgProps,
 } from 'react-native-svg';
 
@@ -116,4 +108,3 @@ export const ZtoAIcon = (props: SvgProps) => {
     </Svg>
   )
 }
-

@@ -1,25 +1,21 @@
-import React, {
-  useState, createContext, useContext, ReactNode,
-} from 'react';
-import { node } from 'prop-types';
-
+import React, { useState, createContext, useContext, ReactNode } from 'react';
 interface Props {
-  children?: ReactNode;
+  children?: ReactNode
 }
 
 interface ContextType {
-  asset: string;
-  setAsset: (value: string) => void;
-  sortOption: string | number;
-  setSortOption: (value: string | number) => void;
+  asset: string
+  setAsset: (value: string) => void
+  sortOption: string | number
+  setSortOption: (value: string | number) => void
 }
 
 const initialState = {
   asset: '',
   setAsset: () => {},
   sortOption: 0,
-  setSortOption: () => {}
-}
+  setSortOption: () => {},
+};
 
 const MarketContext = createContext<ContextType>(initialState);
 

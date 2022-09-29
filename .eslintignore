@@ -1,0 +1,8 @@
+*.ts
+*.js
+*.json
+*.md
+.babelrc
+src/styles/**/*.ts
+src/styles/*.css
+src/themes/*.ts

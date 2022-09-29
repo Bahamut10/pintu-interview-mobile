@@ -1,14 +1,14 @@
-import { useRef, useState } from "react";
-import { Pressable, StyleSheet, Text } from "react-native";
+import React, { useRef, useState } from 'react';
+import { Pressable, StyleSheet, Text } from 'react-native';
 
-import colors from "../themes/colors";
-import { SortIcon } from "./common/Icon";
-import SortBottomSheet from "./SortBottomSheet";
+import colors from '../themes/colors';
+import { SortIcon } from './common/Icon';
+import SortBottomSheet from './SortBottomSheet';
 
 const SortButton = () => {
   const [option, setOption] = useState<any>({
     icon: <SortIcon fill={colors.charcoalBlack} />,
-    title: 'Default'
+    title: 'Default',
   });
   const dropdownRef = useRef<any>();
 
@@ -27,7 +27,11 @@ const SortButton = () => {
       >
         {option?.title}
       </Text>
-      <SortBottomSheet closeDropdown={closeDropdown} setOption={setOption} ref={dropdownRef} />
+      <SortBottomSheet
+        closeDropdown={closeDropdown}
+        setOption={setOption}
+        ref={dropdownRef}
+      />
     </Pressable>
   );
 };
@@ -35,10 +39,10 @@ const SortButton = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    width: "100%",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
     marginHorizontal: 16,
     marginBottom: 6,
     top: -2,
@@ -47,8 +51,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.semiBlue,
   },
   sortOptionText: {
-    fontWeight: "bold",
-    maxWidth: '70%'
+    fontWeight: 'bold',
+    maxWidth: '70%',
   },
 });
 

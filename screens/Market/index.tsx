@@ -1,36 +1,40 @@
+import React, { useCallback } from 'react';
+import {
+  FlatList,
+  ListRenderItem,
+  RefreshControl,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 
-import { useCallback, useEffect } from "react";
-import { FlatList, ListRenderItem, RefreshControl, StyleSheet, Text, View } from "react-native";
-
-import CryptoItem from "../../components/CryptoItem";
-import { useMarketContext } from "../../contexts/MarketContext";
-import { CryptoCoin } from "../../interfaces/crypto";
-import colors from "../../themes/colors";
-import useMarket from "./useMarket";
+import CryptoItem from '../../components/CryptoItem';
+import { CryptoCoin } from '../../interfaces/crypto';
+import colors from '../../themes/colors';
+import useMarket from './useMarket';
 
 const Market = () => {
-  const {
-    data,
-    getPrice,
-    handleRefetch,
-    isLoading,
-    isCoinDelisted,
-    refresh,
-  } = useMarket();
+  const { data, getPrice, handleRefetch, isLoading, isCoinDelisted, refresh } =
+    useMarket();
 
   const renderItemSeparator = useCallback(() => {
-    return <View style={styles.divider} />
+    return <View style={styles.divider} />;
   }, [data]);
 
-  const renderItem: ListRenderItem<CryptoCoin> = ({ item }: { item: CryptoCoin }) => {
+  const renderItem: ListRenderItem<CryptoCoin> = ({
+    item,
+  }: {
+    item: CryptoCoin
+  }) => {
     if (!isCoinDelisted(item)) {
-      return <CryptoItem coin={item} price={getPrice(item)} />
-    } return <></>
+      return <CryptoItem coin={item} price={getPrice(item)} />;
+    }
+    return <></>;
   };
 
   const keyExtractor = (item: CryptoCoin) => item.name;
 
-  if (isLoading) return <Text>Loading...</Text>
+  if (isLoading) return <Text>Loading...</Text>;
 
   return (
     <FlatList
@@ -39,7 +43,7 @@ const Market = () => {
       ItemSeparatorComponent={renderItemSeparator}
       renderItem={renderItem}
       keyExtractor={keyExtractor}
-      refreshControl={(
+      refreshControl={
         <RefreshControl
           refreshing={refresh}
           title="Pull to refresh"
@@ -47,10 +51,10 @@ const Market = () => {
           titleColor={colors.gloomyWhite}
           onRefresh={handleRefetch}
         />
-      )}
+      }
     />
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   list: {
@@ -59,7 +63,7 @@ const styles = StyleSheet.create({
   divider: {
     height: 1,
     backgroundColor: colors.gloomyWhite,
-  }
-})
+  },
+});
 
 export default Market;

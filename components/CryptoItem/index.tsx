@@ -1,15 +1,15 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { SvgUri } from "react-native-svg";
-import { CryptoCoin } from "../../interfaces/crypto";
-import { CryptoPrice } from "../../interfaces/price";
-import colors from "../../themes/colors";
-import { DownIcon, UpIcon } from "../common/Icon";
-import useCryptoItem from "./useCryptoItem";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { SvgUri } from 'react-native-svg';
+import { CryptoCoin } from '../../interfaces/crypto';
+import { CryptoPrice } from '../../interfaces/price';
+import colors from '../../themes/colors';
+import { DownIcon, UpIcon } from '../common/Icon';
+import useCryptoItem from './useCryptoItem';
 
 interface Props {
-  coin: CryptoCoin;
-  price: CryptoPrice;
+  coin: CryptoCoin
+  price: CryptoPrice
 }
 
 const CryptoItem = (props: Props) => {
@@ -35,15 +35,17 @@ const CryptoItem = (props: Props) => {
           Rp {formatCurrency(parseInt(price?.latestPrice))}
         </Text>
         <View style={styles.coinMovement}>
-          {parseFloat(price?.["day"]!) > 0 ? (
+          {parseFloat(price?.day ?? '0.00') > 0
+            ? (
             <UpIcon fill={colors.lightGreen} style={styles.arrow} />
-          ) : (
+              )
+            : (
             <DownIcon fill={colors.tomatoRed} style={styles.arrow} />
-          )}
+              )}
           <Text
             style={[
               styles.coinName,
-              parseFloat(price?.day!) > 0 ? styles.up : styles.down,
+              parseFloat(price?.day ?? '0.00') > 0 ? styles.up : styles.down,
             ]}
           >
             {price?.day}%
@@ -56,37 +58,37 @@ const CryptoItem = (props: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     paddingHorizontal: 15,
     paddingVertical: 20,
   },
   coinIdentity: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   coinIdentityWrapper: {
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
     marginLeft: 8,
   },
   coinName: {
     fontSize: 14,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   coinSymbol: {
     fontSize: 12,
     color: colors.shadowWhite,
   },
   coinPriceWrapper: {
-    alignItems: "flex-end",
+    alignItems: 'flex-end',
   },
   coinPrice: {
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   coinMovement: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   arrow: {
     bottom: -2,

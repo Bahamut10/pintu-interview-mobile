@@ -1,8 +1,8 @@
-import { ChangeEvent } from "react";
-import { Dimensions, StyleSheet, Text, TextInput, View } from "react-native";
+import React from 'react';
+import { Dimensions, StyleSheet, TextInput, View } from 'react-native';
 
-import { useMarketContext } from "../contexts/MarketContext";
-import colors from "../themes/colors";
+import { useMarketContext } from '../contexts/MarketContext';
+import colors from '../themes/colors';
 
 const width = Dimensions.get('screen').width - 150;
 
@@ -18,8 +18,8 @@ const SearchBar = () => {
         onChangeText={handleInput}
       />
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   input: {
     borderRadius: 5,
-    borderWidth: .5,
+    borderWidth: 0.5,
     paddingVertical: 5,
     paddingHorizontal: 8,
     backgroundColor: colors.gloomyWhite,
@@ -40,6 +40,6 @@ const styles = StyleSheet.create({
     height: 40,
     flex: 1,
   },
-})
+});
 
 export default SearchBar;
