@@ -19,7 +19,7 @@ interface Props {
 
 const SortBottomSheet = forwardRef<any, Props>((props, ref) => {
   const { closeDropdown, setOption } = props;
-  const { setSortOption } = useMarketContext();
+  const { sortOption: contextSortOption, setSortOption } = useMarketContext();
 
   const sortOption = [
     {
@@ -85,7 +85,10 @@ const SortBottomSheet = forwardRef<any, Props>((props, ref) => {
       showSwipeIndicator={true}
       roundedTop="xl"
     >
-      <Radio.Group onChange={handleRadioChange}>
+      <Radio.Group
+        value={contextSortOption}
+        onChange={handleRadioChange}
+      >
         {renderSortOption()}
       </Radio.Group>
     </Dropdown>

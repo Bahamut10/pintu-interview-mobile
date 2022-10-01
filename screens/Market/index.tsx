@@ -21,11 +21,7 @@ const Market = () => {
     return <View style={styles.divider} />;
   }, [data]);
 
-  const renderItem: ListRenderItem<CryptoCoin> = ({
-    item,
-  }: {
-    item: CryptoCoin
-  }) => {
+  const renderItem: ListRenderItem<CryptoCoin> = ({ item }) => {
     if (!isCoinDelisted(item)) {
       return <CryptoItem coin={item} price={getPrice(item)} />;
     }

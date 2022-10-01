@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { SvgUri } from 'react-native-svg';
 import { CryptoCoin } from '../../interfaces/crypto';
@@ -104,4 +104,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default CryptoItem;
+export default memo(CryptoItem);
