@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mobile-pintu-interview",
-    "slug": "mobile-pintu-interview",
+    "name": "pintu-interview-mobile",
+    "slug": "pintu",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
