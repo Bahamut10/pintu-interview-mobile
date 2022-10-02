@@ -1,3 +1,4 @@
+// export { default } from './storybook';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
