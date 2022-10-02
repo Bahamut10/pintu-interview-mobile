@@ -4,7 +4,6 @@ import {
   ListRenderItem,
   RefreshControl,
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
 
@@ -14,7 +13,7 @@ import colors from '../../themes/colors';
 import useMarket from './useMarket';
 
 const Market = () => {
-  const { data, getPrice, handleRefetch, isLoading, isCoinDelisted, refresh } =
+  const { data, getPrice, handleRefetch, isCoinDelisted, refresh } =
     useMarket();
 
   const renderItemSeparator = useCallback(() => {
@@ -29,8 +28,6 @@ const Market = () => {
   };
 
   const keyExtractor = (item: CryptoCoin) => item.name;
-
-  if (isLoading) return <Text>Loading...</Text>;
 
   return (
     <FlatList

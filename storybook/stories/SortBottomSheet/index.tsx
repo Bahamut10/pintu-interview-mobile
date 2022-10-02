@@ -6,10 +6,6 @@ import { SortIcon } from '../../../components/common/Icon';
 import SortBottomSheet from '../../../components/SortBottomSheet';
 import colors from '../../../themes/colors';
 
-interface Props {
-  setOption: Function
-}
-
 const SortBottomSheetComponent = () => {
   const [option, setOption] = useState<any>({
     icon: <SortIcon fill={colors.charcoalBlack} />,

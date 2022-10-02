@@ -3,16 +3,22 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import SearchBar from '../components/Searchbar';
 import SortButton from '../components/SortButton';
-import Market from '../screens/Market';
+import MarketByTag from '../screens/MarketByTag';
+import Home from '../screens';
 
-const Stack = createStackNavigator();
+export type StackParamList = {
+  Home: undefined
+  MarketByTag: { title: string }
+}
+
+const Stack = createStackNavigator<StackParamList>();
 
 const MarketNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={screenOptions}>
+    <Stack.Navigator initialRouteName="Home">
       <Stack.Screen
-        name="News List"
-        component={Market}
+        name="Home"
+        component={Home}
         options={{
           title: '',
           headerLeft: () => <SearchBar />,
@@ -22,18 +28,17 @@ const MarketNavigator = () => {
           },
         }}
       />
+      <Stack.Screen
+        name="MarketByTag"
+        component={MarketByTag}
+        options={{
+          title: '',
+          headerTitle: '',
+          headerTransparent: true,
+        }}
+      />
     </Stack.Navigator>
   );
-};
-
-const screenOptions = {
-  // cardStyle: {
-  //   backgroundColor: color.primary
-  // },
-  // headerStyle: {
-  //   backgroundColor: color.primary,
-  // },
-  // headerTintColor: color.secondary,
 };
 
 export default MarketNavigator;

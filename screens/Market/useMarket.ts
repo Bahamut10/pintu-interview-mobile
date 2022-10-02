@@ -4,6 +4,7 @@ import { useMarketContext } from "../../contexts/MarketContext";
 import { delisted } from "../../helpers/delisted";
 import { CryptoCoin } from "../../interfaces/crypto";
 import { CryptoPrice } from "../../interfaces/price";
+import { Datum } from "../../interfaces/tags";
 import Crypto from "../../network/Crypto";
 
 const useMarket = () => {

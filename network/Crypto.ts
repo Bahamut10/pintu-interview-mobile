@@ -1,5 +1,7 @@
+import axios from 'axios';
 import {  Response } from '../interfaces/crypto';
 import { PriceResponse } from '../interfaces/price';
+import { TagResponse } from '../interfaces/tags';
 import { fetch } from './Fetch';
 
 class Crypto {
@@ -9,6 +11,14 @@ class Crypto {
 
   static getCryptoPriceChanges(): Promise<PriceResponse> {
     return fetch.get(`/trade/price-changes`);
+  }
+
+  static getMarketTags (): Promise<TagResponse> {
+    return axios.get('https://content.pintu.co.id/market-tags?language.name=ID&_sort=order:ASC');
+  }
+
+  static getCryptoListByTag (tag: string): Promise<TagResponse> {
+    return axios.get(`https://content.pintu.co.id/market-tags?slug_eq=${tag}&language.name=ID`);
   }
 }
 
