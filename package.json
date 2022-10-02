@@ -7,7 +7,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "storybook": "start-storybook -p 7007",
+    "storybook": "start-storybook -p 7007 -h 192.168.0.103",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
@@ -23,7 +23,9 @@
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-native": "0.69.6",
+    "react-native-gesture-handler": "^2.6.2",
     "react-native-magnus": "^1.0.63",
+    "react-native-modal": "^13.0.1",
     "react-native-svg": "^12.3.0",
     "react-native-web": "~0.18.7",
     "react-query": "^3.39.2"

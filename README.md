@@ -44,12 +44,11 @@ To run the storybook, all you need to do is
 export { default } from './storybook';
 ```
 
-2. Run the storybook
+2. Run the app
 ```bash
-npm run storybook
+npm start
 ```
 
-A browser tab with a link to [http://localhost:7007](http://localhost:7007) should be opened automatically once the command is run. You can refer back to your android or ios devices and check its navigation part to navigate through various components included in the storybook.
 
 ## Functionalities
 

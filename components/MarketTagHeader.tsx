@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { Dimensions, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { SvgUri } from 'react-native-svg';
+
 import { TagResponse } from '../interfaces/tags';
 import colors from '../themes/colors';
 
