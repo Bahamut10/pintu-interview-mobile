@@ -33,6 +33,9 @@ This project uses :
  
 And it's deployed to Expo with the link which can be accessed [here](https://expo.dev/@kenedy.lukito/pintu).
 
+> Note: If you're an iOS user, you might get a 403 Network Error while trying to access the link due to Apple App Store policy which does not allow a user to access other people's Expo apps by scanning QR code. You must be added as a team member in order to be able to access it.
+
+
 ## Storybook
 
 This project comes with [Storybook](https://storybook.js.org/) to help documenting the components used in this project.

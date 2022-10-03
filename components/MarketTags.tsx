@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { Dimensions, FlatList, ListRenderItem, Pressable, StyleSheet, View } from 'react-native';
+import { Dimensions, FlatList, ListRenderItem, Platform, Pressable, StyleSheet, View } from 'react-native';
 import { useQuery } from 'react-query';
 
 import { CryptoTag } from '../interfaces/tags';
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   list: {
     backgroundColor: 'white',
     width: Dimensions.get('screen').width,
-    // marginRight: 20,
+    marginTop: Platform.OS === 'android' ? 10 : 0,
   },
   content: {
     paddingHorizontal: 20,
