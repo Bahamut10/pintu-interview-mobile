@@ -88,3 +88,11 @@ This is a feature to sort the cryptocurrencies list based on:
 - Asset Name (Z to A)
 
 ![Sort](https://i.ibb.co/QQwk3Sj/IMAGE-2022-10-03-11-19-24.jpg "Sort")
+
+## Assumption
+
+It's assumed that this project has no "cryptocurrency detail" pages. This leads to the way the search bar is designed and the cryptocurrencies cannot be clicked due to no detail page.
+
+## What could be improved?
+
+Design system can be really helpful in order to reduce redundancy of design and code. Therefore, implementing design system can be a huge improvement to this project.
