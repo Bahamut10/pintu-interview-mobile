@@ -1,10 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import SearchBar from '../components/Searchbar';
-import SortButton from '../components/SortButton';
 import MarketByTag from '../screens/MarketByTag';
 import Home from '../screens';
+import MarketTags from '../components/MarketTags';
 
 export type StackParamList = {
   Home: undefined
@@ -21,8 +20,7 @@ const MarketNavigator = () => {
         component={Home}
         options={{
           title: '',
-          headerLeft: () => <SearchBar />,
-          headerRight: () => <SortButton />,
+          headerRight: () => <MarketTags />,
           headerStyle: {
             shadowOpacity: 0,
           },

@@ -4,7 +4,7 @@ import { Dimensions, StyleSheet, TextInput, View } from 'react-native';
 import { useMarketContext } from '../contexts/MarketContext';
 import colors from '../themes/colors';
 
-const width = Dimensions.get('screen').width - 150;
+const width = Dimensions.get('screen').width * 0.65;
 
 const SearchBar = () => {
   const { setAsset } = useMarketContext();
@@ -25,8 +25,6 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginHorizontal: 16,
-    marginBottom: 10,
     width,
   },
   input: {

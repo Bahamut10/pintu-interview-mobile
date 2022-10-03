@@ -1,10 +1,10 @@
 export interface TagResponse {
-  data: Datum[]
+  data: CryptoTag[]
   status: number
   statusText: string
 }
 
-export interface Datum {
+export interface CryptoTag {
   id: number
   title: string
   subtitle: string

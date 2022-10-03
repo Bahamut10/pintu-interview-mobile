@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     borderWidth: 1,
     borderColor: colors.stormWhite,
-    marginHorizontal: 5,
   },
   title: {
     marginLeft: 8

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { useToast } from "react-native-toast-notifications";
 import { useQuery } from "react-query";
+
 import { useMarketContext } from "../../contexts/MarketContext";
 import { delisted } from "../../helpers/delisted";
 import { CryptoCoin } from "../../interfaces/crypto";
 import { CryptoPrice } from "../../interfaces/price";
-import { Datum } from "../../interfaces/tags";
 import Crypto from "../../network/Crypto";
 
 const useMarket = () => {
@@ -13,11 +14,31 @@ const useMarket = () => {
   const [refresh, setRefresh] = useState(false);
 
   const { data: coinData, isLoading, refetch: refetchCoin } = useQuery('coin-list', () => Crypto.getCryptoList(), {
-    onSuccess: () => setRefresh(false)
+    onSuccess: () => setRefresh(false),
+    onError: () => {
+      const toast = useToast();
+
+      toast.show('Something went wrong, please restart the app', {
+        type: 'danger',
+        placement: 'bottom',
+        duration: 5000,
+        animationType: 'zoom-in'
+      });
+    }
   });
 
   const { data: priceData, refetch: refetchPrice } = useQuery('price-change', () => Crypto.getCryptoPriceChanges(), {
     refetchInterval: 1000,
+    onError: () => {
+      const toast = useToast();
+
+      toast.show('Something went wrong...', {
+        type: 'danger',
+        placement: 'bottom',
+        duration: 800,
+        animationType: 'zoom-in'
+      });
+    }
   });
 
   const getPrice = (coin: CryptoCoin): CryptoPrice => (

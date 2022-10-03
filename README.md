@@ -58,15 +58,23 @@ This mobile app consists of several parts to support its functionality.
 
 This is the main part of the web which displays the list of cryptocurrencies available to be traded in the platform. It displays the price movement along with the percentage within the last 24 hours.
 
-![Market Table](https://i.ibb.co/p4whmzj/telegram-cloud-photo-size-5-6181523224433636411-y.jpg "Market Table")
+![Market Table](https://i.ibb.co/gtmWZ0J/IMAGE-2022-10-03-11-15-50.jpg "Market Table")
 
 #### 2. Search
 
 Just like how it's named, this is an input form to make it easy for you to search for certain Currencies you are looking for. You can search it by typing down its name or its currencySymbol.
 
-![Search](https://i.ibb.co/C5jYLdz/telegram-cloud-photo-size-5-6181523224433636412-y.jpg "Search")
+![Search](https://i.ibb.co/KqMF72w/IMAGE-2022-10-03-11-17-37.jpg "Search")
 
-### 3. Sort
+#### 3. Market Tags
+
+This is the part which can be used to "filter" cryptocurrencies based on certain category.
+
+![Market Tags](https://i.ibb.co/93xc70t/IMAGE-2022-10-03-11-17-35.jpg "Market Tags")
+
+![Market Tags](https://i.ibb.co/1qjwMGj/telegram-cloud-photo-size-5-6183775024247321868-y.jpg "Market Tags")
+
+### 4. Sort
 
 This is a feature to sort the cryptocurrencies list based on:
 
@@ -76,4 +84,4 @@ This is a feature to sort the cryptocurrencies list based on:
 - Asset Name (A to Z)
 - Asset Name (Z to A)
 
-![Sort](https://i.ibb.co/frKtzFX/telegram-cloud-photo-size-5-6181523224433636416-y.jpg.jpg "Sort")
+![Sort](https://i.ibb.co/QQwk3Sj/IMAGE-2022-10-03-11-19-24.jpg "Sort")

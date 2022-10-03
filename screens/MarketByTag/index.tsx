@@ -1,6 +1,7 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { useCallback, useState } from 'react';
 import { FlatList, ListRenderItem, RefreshControl, StyleSheet, View } from 'react-native';
+import { useToast } from 'react-native-toast-notifications';
 import { useQuery } from 'react-query';
 
 import CryptoItem from '../../components/CryptoItem';
@@ -25,6 +26,16 @@ const MarketByTag = ({ route }: Props) => {
     onSuccess: ({ data: marketByTagData }) => {
       const cryptoIntersection = data?.filter((value) => marketByTagData[0].currencies.some((val) => val.name === value.currencySymbol))
       setCoinsByTag(cryptoIntersection);
+    },
+    onError: () => {
+      const toast = useToast();
+
+      toast.show('Something went wrong, please go back and reopen this screen', {
+        type: 'danger',
+        placement: 'bottom',
+        duration: 5000,
+        animationType: 'zoom-in'
+      });
     }
   })
 

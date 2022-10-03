@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Platform, Pressable, StyleSheet, Text } from 'react-native';
+import { Pressable, StyleSheet, Text } from 'react-native';
 
 import colors from '../themes/colors';
 import { SortIcon } from './common/Icon';
@@ -42,11 +42,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100%',
-    marginHorizontal: 16,
-    marginBottom: Platform.OS === 'android' ? 14 : 6,
-    top: Platform.OS === 'android' ? 2 : -2,
-    maxWidth: 100,
+    marginLeft: 16,
     borderRadius: 5,
     backgroundColor: colors.semiBlue,
   },

@@ -1,10 +1,10 @@
+import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import React, { memo } from 'react'
-import { FlatList, ListRenderItem, Pressable, StyleSheet } from 'react-native';
+import { Dimensions, FlatList, ListRenderItem, Pressable, StyleSheet, View } from 'react-native';
 import { useQuery } from 'react-query';
 
-import { Datum } from '../interfaces/tags';
+import { CryptoTag } from '../interfaces/tags';
 import Crypto from '../network/Crypto';
 import Tag from './common/Tag';
 
@@ -16,7 +16,7 @@ const MarketTags = () => {
   const navigation = useNavigation<StackNavigationProp<NavigationProps>>();
   const { data } = useQuery('market-tags', () => Crypto.getMarketTags());
 
-  const slug = (item: Datum) => {
+  const slug = (item: CryptoTag) => {
     switch (item.title.toLowerCase()) {
       case 'nft/gaming': return 'gaming';
       case 'terbaru': return 'new';
@@ -25,7 +25,7 @@ const MarketTags = () => {
     }
   }
 
-  const renderItem: ListRenderItem<Datum> = ({ item }) => {
+  const renderItem: ListRenderItem<CryptoTag> = ({ item }) => {
     return (
       <Pressable
         onPress={() => {
@@ -38,12 +38,19 @@ const MarketTags = () => {
     )
   }
 
-  const keyExtractor = (item: Datum) => item.id.toString();
+  const renderSeparator = () => (
+    <View style={styles.separator} />
+  )
+
+  const keyExtractor = (item: CryptoTag) => item.id.toString();
 
   return (
     <FlatList
       data={data?.data}
       style={styles.list}
+      contentContainerStyle={styles.content}
+      ItemSeparatorComponent={renderSeparator}
+      showsHorizontalScrollIndicator={false}
       renderItem={renderItem}
       keyExtractor={keyExtractor}
       horizontal
@@ -54,8 +61,15 @@ const MarketTags = () => {
 const styles = StyleSheet.create({
   list: {
     backgroundColor: 'white',
-    paddingVertical: 10,
+    width: Dimensions.get('screen').width,
+    // marginRight: 20,
   },
+  content: {
+    paddingHorizontal: 20,
+  },
+  separator: {
+    width: 8,
+  }
 });
 
-export default memo(MarketTags);
+export default MarketTags;

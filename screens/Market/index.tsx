@@ -40,8 +40,8 @@ const Market = () => {
         <RefreshControl
           refreshing={refresh}
           title="Pull to refresh"
-          tintColor={colors.gloomyWhite}
-          titleColor={colors.gloomyWhite}
+          tintColor={colors.stormWhite}
+          titleColor={colors.stormWhite}
           onRefresh={handleRefetch}
         />
       }
